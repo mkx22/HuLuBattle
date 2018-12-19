@@ -1,16 +1,20 @@
 ﻿HuLuBattle
 ===========
 JavaFX
--
+------
+
 submodule使用
--
+-------------
+
 人物（葫芦娃、爷爷、蛇精、蝎子精小喽啰）
--
+------------------------------------
+
 Creature.java
--
+-------------
 一个抽象类，作为所有人物的基类，暂时仅记录人物的坐标属性（共有属性）。
+
 Enemy.java
--
+----------
 * 表示敌人，作为蝎子精（Scorption）和小喽啰（Followers）的基类，其派生类在各自构造函数中初始化（需要调用基类的构造器）。
 * 其函数（如getImage()）可以被派生类（Scorption、Followers）调用，以获取蝎子精小喽啰的图像。
 
@@ -36,7 +40,7 @@ public class Enemy extends Creature {
 }
 
 ```
-* ##Scorption.java
+* Scorption.java
  * 作为Enemy派生类，具有其图像属性。需要用super调用基类构造器进行构造，对蝎子精图像大小属性进行设置。
  * 因为实例化派生类时，基类也会被实例化，如果不调用基类的构造器，基类将不会被实例化。
 
@@ -49,7 +53,7 @@ public class Scorpion extends Enemy{
 }
 
 ```
-* ##Followers.java
+* Followers.java
  * 和Scorption一样作为Enemy的派生类，需要调用基类构造器进行构造，对小喽啰的图像大小属性进行设置。
 
 ```javascript
@@ -61,7 +65,8 @@ public class Followers extends Enemy {
 }
 ```
 
-##HuLuBro.java
+HuLuBro.java
+------------
 * 因为葫芦娃的数量是固定的，所以使用枚举类；
 * 在枚举类中添加构造方法，将葫芦娃的属性（图像、名称等）与葫芦娃这一对象进行绑定；
 
@@ -106,7 +111,8 @@ public class HuLuBro extends Creature{
     }
 ```
 
-##Cheer.java
+Cheer.java
+----------
 * 表示加油方，爷爷和蛇精作为加油一方，在世界中坐标暂时不做改变，且被归为一类，以便之后其进行单独操作。
 * 作为爷爷（YeYe）和蛇精（Snake）的基类，其派生类在各自构造函数中对其图像进行设置。
 * 其函数（如getImage()）可以被派生类（YeYe、Snake）调用，以获取爷爷和蛇精的图像。
@@ -128,7 +134,7 @@ public class Cheer extends Creature {
     }
 }
 ```
-* ##Snake.java
+* Snake.java
 表示蛇精这一对象，相关操作（初始化、返回图像）继承自父类Cheer；
 
 ```javascript
@@ -138,7 +144,7 @@ public class Snake extends Cheer {
     }
 }
 ```
-* ##YeYe.java
+* YeYe.java
 表示老爷爷这一对象，相关操作（初始化、返回图像）继承自父类Cheer；
 
 ```javascript
