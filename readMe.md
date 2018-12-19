@@ -5,6 +5,22 @@ JavaFX
 
 submodule使用
 -------------
+* 提交
+在project（java/20180925）项目中引入子模块（HuLuBattle），并提交子模块信息
+git submodule add ../.git mkx-161220091
+git status  //多了两个需要提交的文件
+git diff    //看到这两项的内容
+git add .
+git commit -m "add submodule"
+git push origin master
+
+* 更新
+cd project1/moduleA
+git branch
+echo "This is a submodule." > b.txt
+git add .
+git commit -m "add b.txt"
+git push origin master
 
 人物（葫芦娃、爷爷、蛇精、蝎子精小喽啰）
 ------------------------------------
