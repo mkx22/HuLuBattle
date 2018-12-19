@@ -1,9 +1,9 @@
-## HuLuBattle
+# HuLuBattle
 ===========
-# JavaFX
+## JavaFX
 ------
 
-# submodule使用
+## submodule使用
 -------------
 #提交
  * 在project（java/20180925）项目中引入子模块（HuLuBattle），并提交子模块信息
@@ -21,7 +21,7 @@
  * git commit -m "add b.txt"
  * git push origin master
 
-# 人物（葫芦娃、爷爷、蛇精、蝎子精小喽啰）
+## 人物（葫芦娃、爷爷、蛇精、蝎子精小喽啰）
 ------------------------------------
 
 Creature.java
