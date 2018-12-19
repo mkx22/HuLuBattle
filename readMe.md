@@ -1,5 +1,5 @@
 # HuLuBattle
-===========
+
 ## JavaFX
 ------
 
