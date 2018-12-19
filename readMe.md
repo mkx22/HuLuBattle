@@ -5,7 +5,7 @@ JavaFX
 
 submodule使用
 -------------
-* 提交
+#提交
  * 在project（java/20180925）项目中引入子模块（HuLuBattle），并提交子模块信息
  * git submodule add ../.git mkx-161220091
  * git status  //多了两个需要提交的文件
@@ -14,7 +14,7 @@ submodule使用
  * git commit -m "add submodule"
  * git push origin master
 
-* 更新
+#更新
  * cd project1/moduleA
  * git branch
  * git add .
