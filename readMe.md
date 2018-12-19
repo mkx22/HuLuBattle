@@ -5,7 +5,7 @@
 
 ## submodule使用
 -------------
-#提交
+### 提交
  * 在project（java/20180925）项目中引入子模块（HuLuBattle），并提交子模块信息
  * git submodule add ../.git mkx-161220091
  * git status  //多了两个需要提交的文件
@@ -14,7 +14,7 @@
  * git commit -m "add submodule"
  * git push origin master
 
-#更新
+### 更新
  * cd project1/moduleA
  * git branch
  * git add .
@@ -55,7 +55,7 @@ public class Enemy extends Creature {
 }
 
 ```
-#Scorption.java
+### Scorption.java
  * 作为Enemy派生类，具有其图像属性。需要用super调用基类构造器进行构造，对蝎子精图像大小属性进行设置。
  * 因为实例化派生类时，基类也会被实例化，如果不调用基类的构造器，基类将不会被实例化。
 
@@ -68,7 +68,7 @@ public class Scorpion extends Enemy{
 }
 
 ```
-#Followers.java
+### Followers.java
  * 和Scorption一样作为Enemy的派生类，需要调用基类构造器进行构造，对小喽啰的图像大小属性进行设置。
 
 ```javascript
@@ -149,7 +149,7 @@ public class Cheer extends Creature {
     }
 }
 ```
-* Snake.java
+### Snake.java
 表示蛇精这一对象，相关操作（初始化、返回图像）继承自父类Cheer；
 
 ```javascript
@@ -159,7 +159,7 @@ public class Snake extends Cheer {
     }
 }
 ```
-* YeYe.java
+### YeYe.java
 表示老爷爷这一对象，相关操作（初始化、返回图像）继承自父类Cheer；
 
 ```javascript
