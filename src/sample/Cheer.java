@@ -16,6 +16,7 @@ public class Cheer extends Creature {
     public Image getImage(){
         return image;
     }
+
 //    public void Ready() {
 //        AnimatedImage cheer = new AnimatedImage();
 //        Image[] yeyeArray = new Image[2];
