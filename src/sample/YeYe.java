@@ -10,7 +10,10 @@ public class YeYe extends Cheer{
 //    private Image yeye2 = new Image("file:yeye2.png", 130, 180, false, false);
 
     public YeYe(){
-        super(new Image("file:yeye.png", 130, 180, false, false));
+
+        super(new Image("file:yeye.png", 120, 180, false, false));
+    this.setX(0);
+    this.setY(450);
     }
 
 }

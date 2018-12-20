@@ -2,11 +2,12 @@ package sample;
 
 import javafx.scene.image.Image;
 
-public class Cheer extends Creature {
+abstract class Cheer extends Creature {
     //变换动作 Frame-Based Animation
     private Image image;
 
     public Cheer(){
+        super(0,450,true);
     }
 
     public Cheer(Image image){

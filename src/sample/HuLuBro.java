@@ -1,45 +1,77 @@
 package sample;
 
+import javafx.animation.AnimationTimer;
 import javafx.scene.image.Image;
 
 
-public class HuLuBro extends Creature{
+public class HuLuBro extends Creature {// implements Runnable{
+
     private enum Bro {
-        RED("file:1.png", "老大"),
-        ORANGE("file:2.png", "老二"),
-        YELLOW("file:3.png", "老三"),
-        GREEN("file:4.png", "老四"),
-        CYAN("file:5.png", "老五"),
-        BLUE("file:6.png", "老六"),
-        PURPLE("file:7.png", "老七");
+        RED("file:1.jpg", "hulu1"),
+        ORANGE("file:2.jpg", "hulu2"),
+        YELLOW("file:3.jpg", "hulu3"),
+        GREEN("file:4.jpg", "hulu4"),
+        CYAN("file:5.jpg", "hulu5"),
+        BLUE("file:6.jpg", "hulu6"),
+        PURPLE("file:7.jpg", "hulu7");
 
         private String url;
         private String name;
-//        private int x;
-//        private int y;
+//        private double x;
+//        private double y;
 
+//        private Bro(){
+//            this.x = 250;//or 330
+//            this.y = this.ordinal()*100+100;
+//
+//        }
         private Bro(String url, String name) {
-            this.url=url;
+            this.url = url;
             this.name = name;
             //初始化坐标
-//            this.x = this.ordinal() + 1;
-//            this.y = 3;
+//            this.x = x;
+//            this.y = y;
         }
 
-        public String getUrl(){
+        public String getUrl() {
             return url;
         }
-        public String getName() {
-            return name;
-        }
+
+//        public double getX(){
+//            return x;
+//        }
+//        public double getY(){
+//            return y;
+//        }
     }
 
     private Bro[] bro = {Bro.RED, Bro.YELLOW, Bro.GREEN, Bro.ORANGE, Bro.CYAN, Bro.BLUE, Bro.PURPLE};
 
-    public HuLuBro(){
 
+    public HuLuBro(int i) {
+        if(i%2==0)
+            setX(250+80*(int)((Math.abs(i-4))/2));
+        else
+            setX(250);
+        if(i<5)
+            setY(100+i*100);
+        else
+            setY(100*(i-4));
+        setAlive(true);
     }
-    public Image getImage(int i){
-        return new Image(bro[i].url,80,80,false,false);
+
+    public Image getImage(int i) {
+        return new Image(bro[i].url, 80, 90, false, false);
     }
+
+    public String getName(int i){
+        return bro[i].name;
+    }
+//    public double getX(int i){
+//        return bro[i].x;
+//    }
+//
+//    public double getY(int i){
+//        return bro[i].y;
+//    }
 }

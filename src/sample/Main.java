@@ -20,9 +20,11 @@ public class Main extends Application {
 
         GamePanel gamePanel=new GamePanel();
         //scene大小设置
-        Scene scene = new Scene(gamePanel, 1320, 740, Color.WHITE);
+        final Scene scene = new Scene(gamePanel, 1320, 740, Color.WHITE);
         //加载人物，（在空格键上）加入点击事件
         gamePanel.load();
+//        gamePanel.clean();
+        gamePanel.show_it();
         //敲击空格，变化阵型
         gamePanel.change();
         primaryStage.setScene(scene);
