@@ -15,8 +15,8 @@
  * git push origin master
 
 ### 更新
- * cd project1/moduleA
- * git branch
+ * cd java/20180925
+ * git branch//
  * git add .
  * git commit -m "add b.txt"
  * git push origin master
