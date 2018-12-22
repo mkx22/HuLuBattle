@@ -9,7 +9,7 @@ abstract class Enemy extends Creature {
     private Image image;
 
     public Enemy() {
-        super(970,100,true);
+        super("Enemy",970,100,true,true);
     }
 
     public Enemy(Image image) {

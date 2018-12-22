@@ -4,7 +4,7 @@ import javafx.animation.AnimationTimer;
 import javafx.scene.image.Image;
 
 
-public class HuLuBro extends Creature {// implements Runnable{
+public class HuLuBro extends Creature {
 
     private enum Bro {
         RED("file:1.jpg", "hulu1"),
@@ -58,6 +58,7 @@ public class HuLuBro extends Creature {// implements Runnable{
         else
             setY(100*(i-4));
         setAlive(true);
+        setName("hulu");
     }
 
     public Image getImage(int i) {
@@ -67,6 +68,7 @@ public class HuLuBro extends Creature {// implements Runnable{
     public String getName(int i){
         return bro[i].name;
     }
+
 //    public double getX(int i){
 //        return bro[i].x;
 //    }

@@ -11,9 +11,11 @@ public class YeYe extends Cheer{
 
     public YeYe(){
 
-        super(new Image("file:yeye.png", 120, 180, false, false));
+        super(new Image("file:yeye.jpg", 150, 180, false, false));
     this.setX(0);
     this.setY(450);
+    this.setAlive(true);
+    this.setName("yeye");
     }
 
 }

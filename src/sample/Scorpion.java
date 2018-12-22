@@ -9,6 +9,8 @@ public class Scorpion extends Enemy {
         this.setX(970);
         this.setY(300);
         this.setAlive(true);
+        this.setIn(true);
+        this.setName("x");//xzj
     }
 
 }

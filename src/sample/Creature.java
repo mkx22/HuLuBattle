@@ -4,20 +4,25 @@ import javafx.scene.image.Image;
 //这一子类暂时不起作用
 //之后会以坐标属性起作用
 abstract class Creature {
-    //private String name;
+    //private int type;
+    private String name;
     private double x;
     private double y;
     private boolean alive;
+    private boolean in;
 
     public Creature() {
         alive = true;
+        in = true;
     }
 
-    public Creature(double x, double y,boolean alive) {
-        //this.name=name;
+    public Creature(String name,double x, double y, boolean alive, boolean in) {
+        //this.type=type;//0:hulu 1:xll 2:xzj 3:yeye 4:snake
+        this.name=name;
         this.x = x;
         this.y = y;
-        this.alive=alive;
+        this.alive = alive;
+        this.in = in;
 //        this.image=image;
     }
 
@@ -34,6 +39,10 @@ abstract class Creature {
         this.alive = x;
     }
 
+    public void setName(String name){this.name=name;}
+    public void setIn(boolean x) {
+        this.in = x;
+    }
 
     public boolean isAlive() {
         return alive;
@@ -43,6 +52,10 @@ abstract class Creature {
     //    return this.name;
     //}
 
+    public boolean isIn() {
+        return in;
+    }
+
     public double getX() {
         return x;
     }
@@ -50,4 +63,5 @@ abstract class Creature {
     public double getY() {
         return y;
     }
+    public String getName(){return name;}
 }

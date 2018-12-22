@@ -9,6 +9,8 @@ public class Snake extends Cheer {
     this.setX(1200);
     this.setY(450);
     this.setAlive(true);
+    this.setIn(true);
+    this.setName("snake");
     }
 
 }

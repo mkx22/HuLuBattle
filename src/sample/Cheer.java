@@ -7,7 +7,7 @@ abstract class Cheer extends Creature {
     private Image image;
 
     public Cheer(){
-        super(0,450,true);
+        super("Cheer",0,450,true,true);
     }
 
     public Cheer(Image image){
