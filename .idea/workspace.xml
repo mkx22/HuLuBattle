@@ -1,34 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HuLuBattle2/sample/Cheer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HuLuBattle2/sample/Cheer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HuLuBattle2/sample/Creature.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HuLuBattle2/sample/Creature.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HuLuBattle2/sample/Enemy.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HuLuBattle2/sample/Enemy.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HuLuBattle2/sample/Followers.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HuLuBattle2/sample/Followers.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HuLuBattle2/sample/GamePanel$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HuLuBattle2/sample/GamePanel$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HuLuBattle2/sample/GamePanel$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HuLuBattle2/sample/GamePanel$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HuLuBattle2/sample/GamePanel$Hulu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HuLuBattle2/sample/GamePanel$Hulu.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HuLuBattle2/sample/GamePanel$SJ.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HuLuBattle2/sample/GamePanel$SJ.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HuLuBattle2/sample/GamePanel$XLL.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HuLuBattle2/sample/GamePanel$XLL.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HuLuBattle2/sample/GamePanel$XZJ.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HuLuBattle2/sample/GamePanel$XZJ.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HuLuBattle2/sample/GamePanel$Ye.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HuLuBattle2/sample/GamePanel$Ye.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HuLuBattle2/sample/GamePanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HuLuBattle2/sample/GamePanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HuLuBattle2/sample/HuLuBro.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HuLuBattle2/sample/HuLuBro.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HuLuBattle2/sample/Scorpion.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HuLuBattle2/sample/Scorpion.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HuLuBattle2/sample/Snake.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HuLuBattle2/sample/Snake.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HuLuBattle2/sample/YeYe.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HuLuBattle2/sample/YeYe.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/Cheer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Cheer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/Creature.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Creature.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Enemy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/Followers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Followers.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/GamePanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/HuLuBro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/HuLuBro.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/Scorpion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Scorpion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/Snake.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Snake.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/YeYe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/YeYe.java" afterDir="false" />
-    </list>
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="" />
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -88,9 +61,10 @@
     <session id="874025876">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="12" />
+          <entry key="project.closed" value="13" />
           <entry key="project.open.time.16" value="1" />
           <entry key="project.open.time.17" value="2" />
+          <entry key="project.open.time.18" value="1" />
           <entry key="project.open.time.19" value="1" />
           <entry key="project.open.time.21" value="1" />
           <entry key="project.open.time.22" value="1" />
@@ -100,7 +74,7 @@
           <entry key="project.open.time.3" value="1" />
           <entry key="project.open.time.30" value="1" />
           <entry key="project.open.time.8" value="1" />
-          <entry key="project.opened" value="12" />
+          <entry key="project.opened" value="13" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -135,7 +109,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sample/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="128">
+            <state relative-caret-position="414">
               <caret line="24" selection-start-line="24" selection-end-line="24" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -147,15 +121,12 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/sample/GamePanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="181">
-              <caret line="72" column="39" lean-forward="true" selection-start-line="72" selection-start-column="39" selection-end-line="72" selection-end-column="39" />
+            <state relative-caret-position="-302">
+              <caret line="72" column="39" selection-start-line="72" selection-start-column="39" selection-end-line="72" selection-end-column="39" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#clean#0;class#GamePanel#0" />
-                <element signature="e#4585#4624#0" />
                 <element signature="method#ifAllDie#0;class#GamePanel#0" />
-                <element signature="e#6382#6404#0" />
-                <element signature="e#10079#10115#0" />
               </folding>
             </state>
           </provider>
@@ -216,8 +187,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sample/Followers.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+            <state relative-caret-position="391">
+              <caret line="19" selection-start-line="19" selection-end-line="19" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -470,15 +441,15 @@
       <workItem from="1545441415312" duration="373000" />
       <workItem from="1545441976858" duration="3821000" />
       <workItem from="1545446260625" duration="2051000" />
+      <workItem from="1545454819805" duration="8000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="131668000" />
+    <option name="totallyTimeSpent" value="131676000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1456" height="876" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" weight="0.12535816" />
       <window_info id="Structure" order="1" weight="0.25" />
@@ -624,6 +595,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="24" selection-start-line="24" selection-end-line="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/YeYe.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
@@ -666,6 +647,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/Followers.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/Cheer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="184">
@@ -684,37 +675,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="24" selection-start-line="24" selection-end-line="24" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Followers.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/GamePanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="181">
-          <caret line="72" column="39" lean-forward="true" selection-start-line="72" selection-start-column="39" selection-end-line="72" selection-end-column="39" />
+        <state relative-caret-position="-302">
+          <caret line="72" column="39" selection-start-line="72" selection-start-column="39" selection-end-line="72" selection-end-column="39" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#clean#0;class#GamePanel#0" />
-            <element signature="e#4585#4624#0" />
             <element signature="method#ifAllDie#0;class#GamePanel#0" />
-            <element signature="e#6382#6404#0" />
-            <element signature="e#10079#10115#0" />
           </folding>
         </state>
       </provider>
