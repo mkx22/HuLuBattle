@@ -19,7 +19,6 @@ abstract class Cheer extends Creature {
     }
 
 //    public void Ready() {
-//        AnimatedImage cheer = new AnimatedImage();
 //        Image[] yeyeArray = new Image[2];
 //        Image[] sjArray = new Image[2];
 //

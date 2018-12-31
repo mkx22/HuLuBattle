@@ -1,14 +1,25 @@
 package sample;
 
 import javafx.animation.AnimationTimer;
+import javafx.animation.Timeline;
 import javafx.event.EventHandler;
 import javafx.scene.Group;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
 import javafx.scene.input.KeyEvent;
+import javafx.stage.FileChooser;
+import javafx.stage.Stage;
+//import java.awt.Dimension;
 
+import javax.imageio.ImageIO;
+import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.io.*;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Random;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -45,17 +56,6 @@ public class GamePanel extends Group {
 
     public GamePanel() {
     }
-
-    public void clean() {
-        int i = 0, j = 0;
-        for (i = 0; i < 10; i++) {
-            for (j = 0; j < 5; j++) {
-                place[i][j] = false;
-                lives[i][j] = "";
-            }
-        }
-    }
-
     public void initialize() {
         int i = 0, j = 0;
         for (i = 0; i < 10; i++) {
@@ -104,7 +104,7 @@ public class GamePanel extends Group {
 
     }
 
-    public void try_it() {
+    public void thread_it() {
         ExecutorService exec = Executors.newCachedThreadPool();
         for (int i = 0; i < 7; i++) {
             exec.execute(new Hulu(bros[i], bros[i].getX(), bros[i].getY(), i));
@@ -176,21 +176,80 @@ public class GamePanel extends Group {
         return true;
     }
 
-    public void change() {
+//    private Timeline timeline;
+    void show_file(String path,int count){
+
+        int i=0;
+        for(i=0;i<=count;i++) {
+            System.out.print(path+"\\"+i+".png"+"\n");
+            Image image = new Image("file:"+path+"\\"+i+".png");
+            gc.drawImage(image,0,0);
+        }
+    }
+
+    private boolean flag=false;
+    private String s1,s2;
+    private int i = 0,n=0;
+
+    public void change(Stage primaryStage) {
 //        final long startNanoTime = System.nanoTime();
         new AnimationTimer() {
             public void handle(long currentNanoTime) {
 //                //实时获得位置后，作为creature的属性对打斗过程进行设置
+                if (input.contains("L")) {
+                    FileChooser fileChooser = new FileChooser();
+                    File file = fileChooser.showOpenDialog(primaryStage);
+                    try {
+                        String path = file.getPath();
+                        FileReader fr = new FileReader(path);
+                        BufferedReader r = new BufferedReader(fr);
+                        s1 = r.readLine();
+                        s2 = r.readLine();
+                        //System.out.print(s1 + " " + s2 + "\n");
+                        fr.close();
+                        r.close();
+                        flag=true;
+                        i = 0;
 
-                if (input.contains("SPACE")) {
-                    try_it();
+                        //show_file(s1, Integer.parseInt(s2));
+//                        int i = 0, n = Integer.parseInt(s2);
+//                        //System.out.print(s1 + "\\" + i + ".png" + "\n");
+//                        Image image = new Image("file:" + path + "\\" + i + ".png");
+//                        gc.drawImage(image, 0, 0);
+//
 
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    } catch (NumberFormatException e) {
+                        e.printStackTrace();
+                    }
+
+                    input.clear();
                 }
-                if (ifAllDie()) {//
-                    show_it();
-                    //System.out.print("?????");
-                    stop();
 
+                if(flag) {
+                    n = Integer.parseInt(s2);
+                    //System.out.print(s1 + " " + i + "\n");
+                    Image image = new Image("file:" + s1 + "\\" + i + ".png");
+                    gc.drawImage(image, 0, 0);
+                    i++;
+
+                    if (i > n){
+                        flag = false;
+                        i=0;
+                    }
+                }
+                if (input.contains("SPACE")) {
+                    thread_it();
+                    pictureScreen();
+                    //input.clear();
+
+                    if (ifAllDie()) {//
+                        show_it();
+                        //System.out.print("?????");
+                        //stop();
+                        input.clear();
+                    }
                 }
             }
 
@@ -198,21 +257,46 @@ public class GamePanel extends Group {
 //
     }
 
-    public ArrayList<String> getInput() {
-        return input;
+    int count=0;
+    public void pictureScreen() {
+        Dimension dimension = Toolkit.getDefaultToolkit().getScreenSize();
+        Rectangle rectangle = new Rectangle(dimension);
+
+        Date date=new Date();
+        String dateForm=new SimpleDateFormat("yyyy-MM-dd").format(date);
+        String path="C:\\Users\\Apple\\IdeaProjects\\HuLuBattle2\\"+dateForm;
+
+        File file=new File(path);
+        if(!file.exists())
+            file.mkdirs();
+
+        File f=new File(file.getName()+"\\result.txt");
+        try {
+            //将截图存储在文件夹中
+            Robot robot=new Robot();
+            BufferedImage bi=robot.createScreenCapture(rectangle);
+            ImageIO.write(bi,"png",new File(file.getName()+"\\"+count+".png"));
+
+            //将文件名存入文件中
+            FileWriter w=new FileWriter(f);
+
+            w.write("C:\\Users\\Apple\\IdeaProjects\\HuLuBattle2\\"+file.getName());
+            w.write("\n");
+            w.write(Integer.toString(count));
+            w.close();
+            count++;
+        }catch(AWTException e){
+            e.printStackTrace();
+        }catch (IOException e){
+            e.printStackTrace();
+        }
+
     }
 
     public void update(long now) {
     }
 
     public void reset(Creature c) {
-//        int i=0,j=0;
-//        for(i=0;i<10;i++){
-//            for(j=0;j<5;j++){
-//                if(!place[i][j]&&!lives[i][j].equals("d"))
-//                    break;;
-//            }
-//        }
         Random ran1 = new Random();
         Random ran2 = new Random();
         int i = ran1.nextInt(10), j = ran2.nextInt(5);
@@ -229,8 +313,6 @@ public class GamePanel extends Group {
                 break;
             }
         }
-//        c.setX(250+80*i);
-//        c.setY(100+100*j);
 
     }
 
@@ -312,7 +394,6 @@ public class GamePanel extends Group {
             Thread.yield();
         }
     }
-
 
     public class XLL implements Runnable {
         private double px;
@@ -405,7 +486,6 @@ public class GamePanel extends Group {
             Thread.yield();
         }
     }
-
 
     public class XZJ implements Runnable {
         private double px;
@@ -534,6 +614,19 @@ public class GamePanel extends Group {
 
     }
 
+    //小喽啰和葫芦娃打架（哪个小喽啰）
+    public void fight3(int x1, int y1, int x2, int y2, int i) {
+        //System.out.print("小喽啰("+x2+","+y2+") vs 葫芦娃("+x1+","+y1+")\n");
+        //先默认葫芦娃肯定能赢1
+
+        //小喽啰输了
+        lives[x2][y2] = "d";
+        place[x2][y2] = false;
+        //是哪个小喽啰
+        followers[i].setAlive(false);
+        //System.out.print("小喽啰"+i+"("+x2+","+y2+")狗带\n");
+    }
+
     //葫芦娃和蝎子精打架（哪个葫芦娃）
     public void fight4(int x1, int y1, int x2, int y2) {
         //System.out.print("蝎子精("+x2+","+y2+") vs 葫芦娃("+x1+","+y1+")\n");
@@ -550,21 +643,9 @@ public class GamePanel extends Group {
 
     }
 
-    //小喽啰和葫芦娃打架（哪个小喽啰）
-    public void fight3(int x1, int y1, int x2, int y2, int i) {
-        //System.out.print("小喽啰("+x2+","+y2+") vs 葫芦娃("+x1+","+y1+")\n");
-        //先默认葫芦娃肯定能赢1
 
-        //小喽啰输了
-        lives[x2][y2] = "d";
-        place[x2][y2] = false;
-        //是哪个小喽啰
-        followers[i].setAlive(false);
-        //System.out.print("小喽啰"+i+"("+x2+","+y2+")狗带\n");
-    }
-
-    public void talk() {
-        System.out.print("talk");
-    }
+//    public void talk() {
+//        System.out.print("talk");
+//    }
 
 }

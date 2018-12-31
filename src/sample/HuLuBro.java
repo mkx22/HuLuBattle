@@ -7,13 +7,13 @@ import javafx.scene.image.Image;
 public class HuLuBro extends Creature {
 
     private enum Bro {
-        RED("file:1.jpg", "hulu1"),
-        ORANGE("file:2.jpg", "hulu2"),
-        YELLOW("file:3.jpg", "hulu3"),
-        GREEN("file:4.jpg", "hulu4"),
-        CYAN("file:5.jpg", "hulu5"),
-        BLUE("file:6.jpg", "hulu6"),
-        PURPLE("file:7.jpg", "hulu7");
+        RED("file:1.png", "hulu1"),
+        ORANGE("file:2.png", "hulu2"),
+        YELLOW("file:3.png", "hulu3"),
+        GREEN("file:4.png", "hulu4"),
+        CYAN("file:5.png", "hulu5"),
+        BLUE("file:6.png", "hulu6"),
+        PURPLE("file:7.png", "hulu7");
 
         private String url;
         private String name;

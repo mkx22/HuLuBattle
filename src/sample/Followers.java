@@ -6,7 +6,7 @@ import java.util.Random;
 
 public class Followers extends Enemy {
     public Followers() {
-        super(new Image("file:enemy.jpg", 80, 90, false, false));
+        super(new Image("file:enemy.png", 100, 100, false, false));
         this.setX(970);
         this.setY(100);
         this.setAlive(true);
@@ -15,7 +15,7 @@ public class Followers extends Enemy {
 
     }
     public Followers(int i) {
-        super(new Image("file:enemy.jpg", 80, 90, false, false));
+        super(new Image("file:enemy.png", 100, 90, false, false));
 
 
         if(i<4) {
