@@ -1,4 +1,8 @@
 # HuLuBattle
+* ### 基于JavaFX的图形实现
+* ### submodule的使用
+* ### 相关操作（点击事件、多线程、异常处理、文件IO等）
+* ### 类的介绍
 
 ## JavaFX
 ------
@@ -6,6 +10,7 @@
 * javaFX中的画布API提供了自定义的纹理。画布API有两个主要的类，Canvas 和 GraphicsContext,定义在javafx.scene.canvas包下。我们可
 以创建一个Canvas对象，然后获得它的GraphicsContext，渲染自定义的形状。因为Canvas是Node的子类，所以可以在场景图
 中使用。
+* 本来因为作业要求是mxn的网格所以想用gridpane绘制图像的，但是一开始不清楚如何将gridpane做出动画效果（网格与网格之间的移动），所以用了画布。
 ```javascript
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
@@ -381,4 +386,37 @@ public class YeYe extends Cheer{
 
 }
 ```
+## Main
+------------------------------------
+* 程序入口class Main
+```javascript
+public class Main extends Application {
+    public static void main(String[] args) {
+        launch(args);
+    }
+    //注解
+    @Override
+    public void start(Stage primaryStage) throws Exception{
+        primaryStage.setTitle("HuLu Battle");
 
+        //BorderPane root = new BorderPane();
+        Group root=new Group();
+
+        GamePanel gamePanel=new GamePanel();
+        //scene大小设置
+        final Scene scene = new Scene(gamePanel, 1320, 740, Color.WHITE);
+        //加载人物，（在空格键上）加入点击事件
+        gamePanel.load();
+        //显示图像
+        gamePanel.show_it();
+        //敲击空格，变化阵型
+        gamePanel.change(primaryStage);
+        primaryStage.setScene(scene);
+        primaryStage.show();
+
+    }
+
+```
+## GamePanel
+------------------
+* 实现了上面提到的各种操作，如文件IO、多线程、异常处理等。
