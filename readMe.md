@@ -15,7 +15,9 @@
  * git push origin master
 
 ### 更新
- * cd java/20180925
+ *经过pull request并且被merge后，更新只需要在自己子模块内更新，更新方法同之前作业
+ *否则
+ * cd java/xxxx
  * git branch//
  * git add .
  * git commit -m "add b.txt"
