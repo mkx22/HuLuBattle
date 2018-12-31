@@ -3,6 +3,7 @@
 * ### submodule的使用
 * ### 相关操作（点击事件、多线程、异常处理、文件IO等）
 * ### 类的介绍
+* ### 使用说明
 
 ## JavaFX
 ------
@@ -374,21 +375,14 @@ public class Snake extends Cheer {
 
 ```javascript
 public class YeYe extends Cheer{
-//    private Image[] yeyeArray = new Image[2];
-//
-//    //爷爷 图像需要大一点
-//    private Image yeye1 = new Image("file:yeye.png", 130, 180, false, false);
-//    private Image yeye2 = new Image("file:yeye2.png", 130, 180, false, false);
-
     public YeYe(){
         super(new Image("file:yeye.png", 130, 180, false, false));
     }
-
 }
 ```
 ## Main.class
 ------------------------------------
-* 程序入口class Main
+程序入口class Main
 ```javascript
 public class Main extends Application {
     public static void main(String[] args) {
@@ -398,7 +392,6 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
         primaryStage.setTitle("HuLu Battle");
-    
         Group root=new Group();
         GamePanel gamePanel=new GamePanel();
         
@@ -412,10 +405,18 @@ public class Main extends Application {
         gamePanel.change(primaryStage);
         primaryStage.setScene(scene);
         primaryStage.show();
-
     }
-
 ```
 ## GamePanel.java
 ------------------
-* 实现了上面提到的各种操作，如文件IO、多线程、异常处理等。
+实现了上面提到的各种操作，如文件IO、多线程、异常处理等。
+
+## 使用说明以及注意事项
+----------------
+点击空格键，葫芦娃、蝎子精和小喽啰开始战斗，遇到己方不战斗，改变位置，遇到敌方与其战斗。
+点击L键，需要按下大写字母控制键再点击L，否则不成功。点击L键后出现文件选择框，进入HuLuBattle下的日期格式（yyyy-MM-dd）文件夹，选择txt文件进行打开，之后会进行战斗过程的回放。
+L键可以在战斗前后使用，进行对战斗过程的读取。在本次实验中，战斗前点击L键，设定为读取之前存入的回放文件，在战斗后点击L键，会回放之前的战斗过程，因为文件夹是按天存储，所以此时存储的是之前的战斗过程，回放的也就会是之前的战斗过程而不是存入的回放文件。因为战斗过程大致相同，只是因为线程的随机性有些许误差，所以这种改变我认为是可以接受的。
+代码中的异常处理和注解体现在各种函数中以及函数之前，并未做详细的解释说明。
+
+From
+161220091 马可欣
