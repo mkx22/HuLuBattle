@@ -23,7 +23,182 @@
  * git commit -m "add b.txt"
  * git push origin master
 
-## 人物（葫芦娃、爷爷、蛇精、蝎子精小喽啰）
+
+## 相关操作（点击事件、多线程、异常处理、文件IO等）
+------
+### 点击事件（空格、L键）
+------
+关于空格，“L”键的相关点击事件
+
+* 设置点击事件，setOnKeyPressed函数表示按下键盘按键时的操作，setOnKeyReleased函数表示松开键盘时的操作，但是因为作业要求，此处不对单独考虑松开键盘时的情况，而是在时间轴（AnimationTimer）函数中对input的内容进行设置。
+
+```javascript
+       
+       //点击事件
+        getScene().setOnKeyPressed(new EventHandler<javafx.scene.input.KeyEvent>() {
+            @Override
+            public void handle(javafx.scene.input.KeyEvent event) {
+                //获取按键信息getCode
+                String code = event.getCode().toString();
+
+                if (!input.contains(code))
+                    input.add(code);
+
+            }
+        });
+
+
+```
+
+
+空格，L键
+
+* 按下空格时所有生物体执行start()函数，向敌方前进，按下L键时显示文件对话框，进行文件读写与回放，由于这些都是动画效果，所以需要在AnimationTimer函数中对其进行控制。 
+* 同时，异常处理，文件的保存与读取（战斗回放），多线程等都在这里进行相关操作。
+
+```javascript
+        new AnimationTimer() {
+            public void handle(long currentNanoTime) {
+```
+* 按下L键选择文件进行战斗回放，这里涉及到文件的读取，需要对IOException做异常处理
+
+```javascript
+                    if (input.contains("L")) {
+                    //打开文件对话框，进行文件选择
+                    //......
+                    //异常处理（文件IO）
+                    try {
+                        //读取文件
+                        //......
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    } 
+                    //点击事件对input的操作
+                    input.clear();
+                }
+```
+
+* 按下空格键，葫芦娃、蝎子精和小喽啰开始战斗，使用多线程并行，将每个生物体实现为一个线程，实现多线程之间的并发处理。
+* 同时，这里涉及到文件的保存，需要对IOException做异常处理。
+
+```javascript
+                if (input.contains("SPACE")) {
+                    //多线程
+                    thread_it();
+                    //截屏，保存到文件中
+                    pictureScreen();
+                    //敌人都死了，
+                    if (ifAllDie()) {
+                        show_it();
+                        input.clear();
+                    }
+                }
+            }
+        }.start();
+
+```
+### 多线程并行（葫芦娃、蝎子精、小喽啰等）
+
+* 将葫芦娃，小喽啰蝎子精等生物各分配一个线程，对其行动进行相应的设置。
+```javascript
+    public void thread_it() {
+        ExecutorService exec = Executors.newCachedThreadPool();
+        for (int i = 0; i < 7; i++) {
+            exec.execute(new Hulu(bros[i], bros[i].getX(), bros[i].getY(), i));
+        }
+        for (int i = 0; i < num; i++) {
+            exec.execute(new XLL(followers[i], followers[i].getX(), followers[i].getY(), i));
+        }
+        exec.execute(new XZJ(xzj.getX(), xzj.getY()));
+//        exec.execute(new Thread(new Ye()));
+//        exec.execute(new Thread(new SJ()));
+
+        show_it();//基于JavaFX框架的图形显示
+    }
+```
+* 葫芦娃的线程描述如下，蝎子精和小喽啰与其大致相同，相关注释在代码中
+
+```javascript
+    //Hulu行为
+    public class Hulu implements Runnable {
+        //坐标变量
+        //......
+        public Hulu(HuLuBro bro, double x, double y, int i) {
+            //初始化
+        }
+
+        public void move() {
+            if (!this.bro.isAlive())//这只葫芦娃已经死了qaq
+                return;
+            if (!ifin(ix + 1, iy)) {//前方没有路了 换位
+                reset(this.bro);
+                //......
+            } else {
+                if (place[ix + 1][iy]) {//前方有活的生物
+                    if (lives[ix + 1][iy].equals("e"))//小喽啰 攻击
+                        fight1(ix, iy, ix + 1, iy, index);
+                    else if (lives[ix + 1][iy].equals("x"))//蝎子精 攻击
+                        fight2(ix, iy, ix + 1, iy, index);
+                    else {//葫芦娃 不能打 换位
+                        reset(this.bro)
+                        //......
+                    }
+                } else {//前方没有活的生物
+                    if (!lives[ix + 1][iy].equals("d")) {//什么都没有 放心走
+                        //......
+                    } else {//有墓碑不能踩 换位
+                        reset(this.bro);
+                        //......
+                    }
+                }
+            }
+        }
+
+        public void run() {
+            move();//葫芦娃该做的事情
+            Thread.yield();//事情做完了，可以把cpu分给其他线程了
+        }
+    }
+```
+
+### 文件IO
+* 通过按下L键这一点击事件进行文件IO的操作，需要进行文件的保存及读取，因为多线程的并行具有一定的随机性，所以单纯对生物的起点与终点进行保存是不可取的，其读取的工作量也会加大。同时，在原来的实现中，生物的行动便是通过不同格子跳转，以及图像的刷新进行实现，所以我用截屏的方式对战斗过程进行保存，将截图的图片数量以及图片所在路径记录在相应文件夹下的result.txt文件中，通过读取该文件对战斗过程进行重现。
+* 缺点：因为是截屏，所以是对整个电脑桌面的截屏，并不是单纯对战斗场景的截屏。
+* 代码注释见下
+```javascript
+    int count=0;
+    public void pictureScreen() {
+        //截屏，按照屏幕大小截取图片
+        Dimension dimension = Toolkit.getDefaultToolkit().getScreenSize();
+        Rectangle rectangle = new Rectangle(dimension);
+        
+        //按照日期命名文件夹，如2018-12-31，也可以命名为其他名称，这里只是考虑了每天的最终截屏结果
+        Date date=new Date();
+        //......       
+        //若文件夹不存在，则新建文件夹
+        
+        //新建txt文件
+        File f=new File(file.getName()+"\\result.txt");
+        try {//异常处理
+            //将截图存储在文件夹中
+            Robot robot=new Robot();
+            BufferedImage bi=robot.createScreenCapture(rectangle);
+            //保存图片
+            ImageIO.write(bi,"png",new File(file.getName()+"\\"+count+".png"));
+
+            //将文件名存入文件中，保存txt文件
+            FileWriter w=new FileWriter(f);
+            //......
+            count++;
+        }catch(){//......
+        //......
+        }
+    }
+```
+
+##类的介绍
+-----------
+## 生物（葫芦娃、爷爷、蛇精、蝎子精小喽啰）
 ------------------------------------
 
 Creature.java
