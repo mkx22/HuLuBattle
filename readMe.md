@@ -386,7 +386,7 @@ public class YeYe extends Cheer{
 
 }
 ```
-## Main
+## Main.class
 ------------------------------------
 * 程序入口class Main
 ```javascript
@@ -398,11 +398,10 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
         primaryStage.setTitle("HuLu Battle");
-
-        //BorderPane root = new BorderPane();
+    
         Group root=new Group();
-
         GamePanel gamePanel=new GamePanel();
+        
         //scene大小设置
         final Scene scene = new Scene(gamePanel, 1320, 740, Color.WHITE);
         //加载人物，（在空格键上）加入点击事件
@@ -417,6 +416,6 @@ public class Main extends Application {
     }
 
 ```
-## GamePanel
+## GamePanel.java
 ------------------
 * 实现了上面提到的各种操作，如文件IO、多线程、异常处理等。
