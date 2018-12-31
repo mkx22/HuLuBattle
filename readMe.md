@@ -2,7 +2,33 @@
 
 ## JavaFX
 ------
-
+* 使用画布API进行图像的绘制
+* javaFX中的画布API提供了自定义的纹理。画布API有两个主要的类，Canvas 和 GraphicsContext,定义在javafx.scene.canvas包下。我们可
+以创建一个Canvas对象，然后获得它的GraphicsContext，渲染自定义的形状。因为Canvas是Node的子类，所以可以在场景图
+中使用。
+```javascript
+import javafx.scene.canvas.Canvas;
+import javafx.scene.canvas.GraphicsContext;
+```
+* 绘制图像，以背景图为例
+```javascript
+    //图形界面
+    //背景图
+    Image background = new Image("file:back2.jpg");
+    //dead
+    Image dead = new Image("file:dead.png", 80, 90, false, false);
+    //画布进行人物设置
+    Canvas canvas = new Canvas(1320, 740);
+    GraphicsContext gc = canvas.getGraphicsContext2D();
+       
+    public void load(){
+       //......
+       gc.fillRect(0, 0, canvas.getWidth(), canvas.getHeight());
+       getChildren().add(canvas);
+       gc.drawImage(background, 0, 0);
+       //......   
+    }
+```
 ## submodule使用
 -------------
 ### 提交
